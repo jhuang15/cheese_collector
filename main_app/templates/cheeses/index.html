@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Cheese List</h1>
+
+{% for cheese in cheeses %}
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">{{ cheese.name }}</span>
+      <p>Type: {{ cheese.type }}</p>
+      <p>Description: {{ cheese.description }}</p>
+      {% if cheese.age > 0 %}
+        <p>Age (month(s)): {{ cheese.age }}</p>
+      {% else %}
+        <p>Age (month(s)): Less than a month</p>
+      {% endif %}
+    </div>
+  </div>
+{% endfor %}
+
+{% endblock %}
